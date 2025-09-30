@@ -7,6 +7,16 @@ const app = express()
 const PORT = 8000
 //Middleware
 app.use(express.urlencoded({ extended: false}));
+//Own middleware
+app.use((req, res, next) => {
+    console.log("Hello from middleware 1");
+    next()
+})
+//Own middleware 2
+app.use((req, res, next) => {
+   console.log("Middleware 2.");
+    next()
+})
 
 app.get('/api/users', (req, res) => {
     return res.json(users)
