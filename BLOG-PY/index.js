@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = 8081;
  
-mongoose 
+mongoose  
   .connect("mongodb://127.0.0.1:27017/blog-py")
   .then(() => console.log("Mongodb connected successfully"))
   .catch((err) => console.log(`Mongodb connection error ${err}`));
