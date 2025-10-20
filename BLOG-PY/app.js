@@ -11,10 +11,10 @@ const {
 } = require("./middlewares/authentication");
  
 const app = express();
-const PORT = process.env.PORT || 8081;
- 
+const PORT = process.env.PORT || 8000;
+const MONGO_URL = process.env.MONGO_URL;
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(MONGO_URL)
   .then(() => console.log("Mongodb connected successfully"))
   .catch((err) => console.log(`Mongodb connection error ${err}`));
    
